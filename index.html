@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./public/css/main.css" type="text/css" />
     <title>session-2-web-2</title>
   </head>
@@ -10,33 +11,68 @@
     <!--make project-->
     <div class="wrapper">
       <!--menu-->
-        <div class="menu">
-          <nav class="nav">
-            <div><a href="#">home</a></div>
-            <div><a href="#">about</a></div>
-            <div><a href="#">contact</a></div>
-            <div><a href="#">gallery</a></div>
-          </nav>
-        </div>
-        <div class="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+      <div class="menu">
+        <nav class="nav">
+          <div><a href="#">home</a></div>
+          <div><a href="#">about</a></div>
+          <div><a href="#">contact</a></div>
+          <div><a href="#">gallery</a></div>
+        </nav>
+      </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <!--end menu-->
+      <div class="slider">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./public/images/image-1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="./public/images/image-2.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <!--slider-->
+      <!--end slider-->
     </div>
     <!--end make project-->
 
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
     <script>
-          let hamburger=document.querySelector(".hamburger")
-          hamburger.addEventListener("click",function(){
-           document.querySelector(".menu") .style.left="0"
-          })
-          let menu=document.querySelector(".menu")
-          menu.addEventListener("click",function(){
-            menu.style.left="-100%"
-          })
-          
+      let hamburger = document.querySelector(".hamburger");
+      hamburger.addEventListener("click", function () {
+        document.querySelector(".menu").style.left = "0";
+      });
+      let menu = document.querySelector(".menu");
+      menu.addEventListener("click", function () {
+        menu.style.left = "-100%";
+      });
+
+      var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 0,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
     </script>
   </body>
 </html>
