@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/css/main.css" type="text/css" />
+    <title>session-2-web-2</title>
+  </head>
+  <body>
+    <!--make project-->
+    <div class="wrapper">
+      <!--menu-->
+        <div class="menu">
+          <nav class="nav">
+            <div><a href="#">home</a></div>
+            <div><a href="#">about</a></div>
+            <div><a href="#">contact</a></div>
+            <div><a href="#">gallery</a></div>
+          </nav>
+        </div>
+        <div class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      <!--end menu-->
+    </div>
+    <!--end make project-->
+
+    <script>
+          let hamburger=document.querySelector(".hamburger")
+          hamburger.addEventListener("click",function(){
+           document.querySelector(".menu") .style.left="0"
+          })
+          let menu=document.querySelector(".menu")
+          menu.addEventListener("click",function(){
+            menu.style.left="-100%"
+          })
+          
+    </script>
+  </body>
+</html>
